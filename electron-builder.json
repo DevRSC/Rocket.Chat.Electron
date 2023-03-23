@@ -27,7 +27,7 @@
     "extendInfo": {
       "NSMicrophoneUsageDescription": "I need access to your microphone to record the audio you want to send.",
       "NSCameraUsageDescription": "I need access to your camera to record the video you want to send.",
-      "NSScreenCaptureDescription": "I need access to your screen to share it through video calls when you want to."
+      "NSScreenCaptureDescription": "I need access to your screen to share it through video calls when you want."
     },
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
