@@ -1,3 +1,4 @@
+import path from 'path';
 import { parse } from 'url';
 
 import { Icon } from '@rocket.chat/fuselage';
@@ -74,8 +75,8 @@ export const SideBar: FC = () => {
               key={server.url}
               url={server.url}
               title={
-                server.title === 'Rocket.Chat' &&
-                parse(server.url).hostname !== 'open.rocket.chat'
+                server.title === 'AIDA Connect' &&
+                parse(server.url).hostname !== 'connect.aida.technology'
                   ? `${server.title} - ${server.url}`
                   : server.title ?? server.url
               }
@@ -85,7 +86,10 @@ export const SideBar: FC = () => {
                   : null
               }
               isSelected={server.selected}
-              favicon={server.favicon ?? null}
+              favicon={
+                'https://raw.githubusercontent.com/DevRSC/Rocket.Chat.Electron/master/icon-7.png' ??
+                null
+              }
               hasUnreadMessages={!!server.badge}
               userLoggedIn={server.userLoggedIn}
               mentionCount={

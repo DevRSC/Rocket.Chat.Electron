@@ -61,7 +61,7 @@
     "update": {
       "title": "Une mise à jour est disponible",
       "announcement": "Une nouvelle mise à jour est disponible",
-      "message": "Une mise à jour de Rocket.Chat Desktop App est disponible !",
+      "message": "Une mise à jour de AIDA.Connect Desktop App est disponible !",
       "currentVersion": "Version actuelle :",
       "newVersion": "Nouvelle version :",
       "install": "Installer la mise à jour",
@@ -234,7 +234,7 @@
   },
   "selfxss": {
     "title": "Stop !",
-    "description": "Il s'agit d'une fonctionnalité de navigateur destinée aux développeurs. Si quelqu'un vous a dit de copier-coller quelque chose ici pour activer une fonctionnalité Rocket.Chat ou \"pirater\" le compte de quelqu'un, il s'agit d'une arnaque et ça lui donnera accès à votre compte Rocket.Chat.",
+    "description": "Il s'agit d'une fonctionnalité de navigateur destinée aux développeurs. Si quelqu'un vous a dit de copier-coller quelque chose ici pour activer une fonctionnalité AIDA.Connect ou \"pirater\" le compte de quelqu'un, il s'agit d'une arnaque et ça lui donnera accès à votre compte AIDA.Connect.",
     "moreInfo": "Voir https://go.rocket.chat/i/xss pour plus d'informations."
   },
   "sidebar": {

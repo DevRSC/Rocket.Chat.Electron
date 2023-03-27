@@ -106,7 +106,7 @@ export function ScreenSharePicker() {
               <br />
               Open <b>System Preferences</b> -<b> Security & Privacy</b> -
               <b> Screen Recording</b> and check
-              <b> Rocket.Chat</b>
+              <b> AIDA Connect</b>
             </Callout>
           </Box>
         )}

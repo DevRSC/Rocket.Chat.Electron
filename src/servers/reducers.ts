@@ -75,6 +75,15 @@ const update = (state: Server[], server: Server): Server[] => {
   );
 };
 
+const isValidUrl = (url: string) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (_) {
+    return false;
+  }
+};
+
 export const servers: Reducer<Server[], ServersActionTypes> = (
   state = [],
   action
@@ -158,18 +167,22 @@ export const servers: Reducer<Server[], ServersActionTypes> = (
 
     case SERVERS_LOADED: {
       const { servers = state } = action.payload;
-      return servers.map((server) => ({
-        ...server,
-        url: ensureUrlFormat(server.url),
-      }));
+      return servers
+        .filter((server) => isValidUrl(server.url))
+        .map((server) => ({
+          ...server,
+          url: ensureUrlFormat(server.url),
+        }));
     }
 
     case APP_SETTINGS_LOADED: {
       const { servers = state } = action.payload;
-      return servers.map((server) => ({
-        ...server,
-        url: ensureUrlFormat(server.url),
-      }));
+      return servers
+        .filter((server) => isValidUrl(server.url))
+        .map((server) => ({
+          ...server,
+          url: ensureUrlFormat(server.url),
+        }));
     }
 
     case WEBVIEW_READY: {

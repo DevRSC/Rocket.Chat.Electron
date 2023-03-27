@@ -18789,23 +18789,16 @@ var linux_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _ar
 };
 
 
-
 const setupSnapcraft = () => core.group('Setup Snapcraft', () => linux_awaiter(void 0, void 0, void 0, function* () {
     yield run(`sudo snap install snapcraft --classic --channel stable`);
-    yield run(`sudo apt install gnome-keyring`);
-    yield run(`dbus-run-session -- bash --noprofile --norc`);
-    yield run(`rm -rf ~/.local/share/keyrings`);
-    yield run(`echo -n 'db' | gnome-keyring-daemon --unlock`);
-    yield run(`echo /snap/bin >> ${process.env.GITHUB_PATH}`);
-    yield run('sudo chown root:root /');
-    const snapcraftToken = core.getInput('snapcraft_token');
-    const snapcraftTokenFile = './snapcraft-token.txt';
-    yield promises.writeFile(snapcraftTokenFile, snapcraftToken, 'utf-8');
-    yield run(`export SNAPCRAFT_STORE_CREDENTIALS=$(cat ${snapcraftTokenFile})`);
-    yield run(`/snap/bin/snapcraft login`);
-    yield promises.unlink(snapcraftTokenFile);
+    // await run(`sudo apt install gnome-keyring`);
+    // await run(`dbus-run-session -- bash --noprofile --norc`);
+    // await run(`rm -rf ~/.local/share/keyrings`);
+    // await run(`echo -n 'db' | gnome-keyring-daemon --unlock`);
+    // await run(`echo /snap/bin >> ${process.env.GITHUB_PATH}`);
+    // await run('sudo chown root:root /');
 }));
-const packOnLinux = () => runElectronBuilder(`--linux tar.gz deb rpm snap`);
+const packOnLinux = () => runElectronBuilder(`--linux tar.gz deb rpm snap AppImage`);
 const snapChannels = (/* unused pure expression or super */ null && (['edge', 'beta', 'candidate', 'stable']));
 const uploadSnap = (snapFilePath, level) => linux_awaiter(void 0, void 0, void 0, function* () {
     const channels = snapChannels.slice(0, snapChannels.indexOf(level) + 1);
@@ -18946,9 +18939,9 @@ const releaseTagged = (version, commitSha) => src_awaiter(void 0, void 0, void 0
         //   await uploadSnap(
         //     path,
         //     (!version.prerelease && 'stable') ||
-        //     (version.prerelease[0] === 'candidate' && 'candidate') ||
-        //     (version.prerelease[0] === 'beta' && 'beta') ||
-        //     'edge'
+        //       (version.prerelease[0] === 'candidate' && 'candidate') ||
+        //       (version.prerelease[0] === 'beta' && 'beta') ||
+        //       'edge'
         //   );
         // }
     }

@@ -29,7 +29,7 @@ export const startVideoCallWindowHandler = (): void => {
   );
 
   handle('video-call-window/open-window', async (_event, url) => {
-    console.log('[Rocket.Chat Desktop] open-internal-video-chat-window', url);
+    console.log('[AIDA.Connect Desktop] open-internal-video-chat-window', url);
     const validUrl = new URL(url);
     const allowedProtocols = ['http:', 'https:'];
     if (allowedProtocols.includes(validUrl.protocol)) {
@@ -84,7 +84,7 @@ export const startVideoCallWindowHandler = (): void => {
         path.join(app.getAppPath(), 'app/video-call-window.html')
       );
       videoCallWindow.once('ready-to-show', () => {
-        console.log('[Rocket.Chat Desktop] ready-to-show', url);
+        console.log('[AIDA.Connect Desktop] ready-to-show', url);
         videoCallWindow.webContents.send('video-call-window/open-url', url);
         videoCallWindow.show();
       });
@@ -95,7 +95,7 @@ export const startVideoCallWindowHandler = (): void => {
         _event: Event,
         webContents: WebContents
       ): void => {
-        // console.log('[Rocket.Chat Desktop] did-attach-webview');
+        // console.log('[AIDA.Connect Desktop] did-attach-webview');
         // webContents.openDevTools();
         webContents.session.setDisplayMediaRequestHandler((_request, cb) => {
           videoCallWindow.webContents.send(

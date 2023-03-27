@@ -127,18 +127,18 @@ export const AboutDialog: FC = () => {
       <Margins block='x16'>
         <RocketChatLogo />
 
-        <Box alignSelf='center'>
+        {/* <Box alignSelf='center'>
           <Trans t={t} i18nKey='dialog.about.version'>
             Version:
             <Box is='span' fontScale='p2' style={{ userSelect: 'text' }}>
               {{ version: appVersion }}
             </Box>
           </Trans>
-        </Box>
+        </Box> */}
 
         {canUpdate && (
           <Box display='flex' flexDirection='column'>
-            <Margins block='x8'>
+            {/* <Margins block='x8'>
               {!checkingForUpdates && (
                 <Button
                   ref={checkForUpdatesButtonRef}
@@ -150,7 +150,7 @@ export const AboutDialog: FC = () => {
                   {t('dialog.about.checkUpdates')}
                 </Button>
               )}
-            </Margins>
+            </Margins> */}
 
             <Margins inline='auto' block='x8'>
               {checkingForUpdates && (
@@ -167,7 +167,7 @@ export const AboutDialog: FC = () => {
                 </Box>
               )}
 
-              <Field.Row>
+              {/* <Field.Row>
                 <ToggleSwitch
                   id={checkForUpdatesOnStartupToggleSwitchId}
                   checked={isCheckForUpdatesOnStartupChecked}
@@ -177,7 +177,7 @@ export const AboutDialog: FC = () => {
                 <Field.Label htmlFor={checkForUpdatesOnStartupToggleSwitchId}>
                   {t('dialog.about.checkUpdatesOnStart')}
                 </Field.Label>
-              </Field.Row>
+              </Field.Row> */}
             </Margins>
           </Box>
         )}

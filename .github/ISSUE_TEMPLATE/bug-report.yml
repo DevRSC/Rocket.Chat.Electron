@@ -1,6 +1,6 @@
 name: Bug report
 title: 'Bug title'
-description: Report issues with Rocket.Chat Desktop App
+description: Report issues with AIDA.Connect Desktop App
 labels: ['type: bug']
 body:
   - type: markdown
@@ -18,11 +18,11 @@ body:
     attributes:
       label: Search before asking
       description: >
-        Please make sure to search in the existing [issues](https://github.com/RocketChat/Rocket.Chat.Electron/issues?q=is%3Aissue)
+        Please make sure to search in the existing [issues](https://github.com/RocketChat/AIDA.Connect.Electron/issues?q=is%3Aissue)
         first to see whether the same issue was reported already.
       options:
         - label: >
-            I had searched in the [issues](https://github.com/RocketChat/Rocket.Chat.Electron/issues?q=is%3Aissue) and found
+            I had searched in the [issues](https://github.com/RocketChat/AIDA.Connect.Electron/issues?q=is%3Aissue) and found
             no similar issues.
           required: true
 
@@ -59,19 +59,19 @@ body:
 
   - type: input
     attributes:
-      label: Rocket.Chat Desktop App Version
+      label: AIDA.Connect Desktop App Version
       description: >
-        Please specify the version of the Rocket.Chat Desktop App.
+        Please specify the version of the AIDA.Connect Desktop App.
       placeholder: 3.8.9
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Rocket.Chat Server Version
+      label: AIDA.Connect Server Version
       description: >
-        Please specify the version of the Rocket.Chat Rocket.Chat ([Server](https://github.com/RocketChat/Rocket.Chat/releases))
-          - You could check your Rocket.Chat server's version by going to `<your server>/api/info`, e.g. [http://localhost:3000/api/info](http://localhost:3000/api/info)
+        Please specify the version of the AIDA.Connect AIDA.Connect ([Server](https://github.com/RocketChat/AIDA.Connect/releases))
+          - You could check your AIDA.Connect server's version by going to `<your server>/api/info`, e.g. [http://localhost:3000/api/info](http://localhost:3000/api/info)
       placeholder: 4.8.2
     validations:
       required: true

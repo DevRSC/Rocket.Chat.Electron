@@ -9,7 +9,10 @@ export const setTitle = (title: string): void => {
 
   const url = getServerUrl();
 
-  if (title === 'Rocket.Chat' && new URL(url).host !== 'open.rocket.chat') {
+  if (
+    title === 'AIDA.Connect' &&
+    new URL(url).host !== 'connect.aida.technology'
+  ) {
     dispatch({
       type: WEBVIEW_TITLE_CHANGED,
       payload: {

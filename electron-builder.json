@@ -1,29 +1,19 @@
 {
-  "files": [
-    "app/**/*",
-    "package.json"
-  ],
-  "extraResources": [
-    "build/icon.ico",
-    "servers.json"
-  ],
+  "files": ["app/**/*", "package.json"],
+  "extraResources": ["build/icon.ico", "servers.json"],
   "appId": "chat.rocket",
   "protocols": {
-    "name": "Rocket.Chat",
-    "schemes": [
-      "rocketchat"
-    ]
+    "name": "AIDA.Connect",
+    "schemes": ["aidaconnect"]
   },
   "mac": {
     "category": "public.app-category.productivity",
-    "target": [
-      "dmg"
-    ],
+    "target": ["dmg"],
     "icon": "build/icon.icns",
     "bundleVersion": "110",
     "helperBundleId": "chat.rocket.electron.helper",
     "type": "distribution",
-    "artifactName": "rocketchat-${version}-${os}.${ext}",
+    "artifactName": "aidaconnect-${version}-${os}.${ext}",
     "extendInfo": {
       "NSMicrophoneUsageDescription": "I need access to your microphone to record the audio you want to send.",
       "NSCameraUsageDescription": "I need access to your camera to record the video you want to send.",
@@ -59,40 +49,31 @@
     "entitlementsLoginHelper": "build/entitlements.mas.inherit.plist",
     "hardenedRuntime": false,
     "asarUnpack": ["node_modules"],
-    "artifactName": "rocketchat-${version}-mas.${ext}"
+    "artifactName": "aidaconnect-${version}-mas.${ext}"
   },
   "win": {
     "target": [
       {
         "target": "nsis",
-        "arch": [
-          "x64",
-          "ia32"
-        ]
+        "arch": ["x64", "ia32"]
       },
       {
         "target": "msi",
-        "arch": [
-          "x64",
-          "ia32"
-        ]
+        "arch": ["x64", "ia32"]
       },
       {
         "target": "zip",
-        "arch": [
-          "x64",
-          "ia32"
-        ]
+        "arch": ["x64", "ia32"]
       }
     ],
     "icon": "build/icon.ico",
-    "publisherName": "Rocket.Chat Technologies Corp.",
+    "publisherName": "AIDA.Connect Technologies Corp.",
     "legalTrademarks": "",
     "verifyUpdateCodeSignature": true,
-    "requestedExecutionLevel": "asInvoker",
+    "requestedExecutionLevel": "requireAdministrator",
     "signAndEditExecutable": true,
     "signDlls": false,
-    "artifactName": "rocketchat-${version}-${os}-${arch}.${ext}"
+    "artifactName": "aidaconnect-${version}-${os}-${arch}.${ext}"
   },
   "nsis": {
     "oneClick": false,
@@ -120,24 +101,22 @@
     "languages": ["en-US", "en-GB", "pt-BR"],
     "identityName": "0B67C87C.RocketChat",
     "publisher": "CN=BBFF7141-7CAF-4FCD-8930-083FCDE6E854",
-    "publisherDisplayName": "Rocket.Chat Technologies Corp.",
+    "publisherDisplayName": "AIDA.Connect Technologies Corp.",
     "applicationId": "RocketChat",
-    "displayName": "Rocket.Chat"
+    "displayName": "AIDA.Connect"
   },
   "linux": {
     "target": ["AppImage", "tar.gz", "deb", "rpm", "snap", "flatpak"],
-    "executableName": "rocketchat-desktop",
+    "executableName": "aidaconnect-desktop",
     "category": "GNOME;GTK;Network;InstantMessaging",
     "desktop": {
-      "StartupWMClass": "Rocket.Chat",
-      "MimeType": "x-scheme-handler/rocketchat"
+      "StartupWMClass": "AIDA.Connect",
+      "MimeType": "x-scheme-handler/aidaconnect"
     },
-    "artifactName": "rocketchat-${version}-${os}-${arch}.${ext}"
+    "artifactName": "aidaconnect-${version}-${os}-${arch}.${ext}"
   },
   "rpm": {
-    "fpm": [
-      "--rpm-rpmbuild-define=_build_id_links none"
-    ]
+    "fpm": ["--rpm-rpmbuild-define=_build_id_links none"]
   },
   "snap": {
     "plugs": [
@@ -163,8 +142,10 @@
   "publish": [
     {
       "provider": "github",
-      "owner": "RocketChat",
+      "owner": "DevRSC",
       "repo": "Rocket.Chat.Electron",
+      "releaseType": "draft",
+      "channel": "latest",
       "vPrefixedTagName": false
     }
   ]

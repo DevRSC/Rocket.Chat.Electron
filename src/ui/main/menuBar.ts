@@ -232,33 +232,33 @@ const createViewMenu = createSelector(
           guestWebContents?.reloadIgnoringCache();
         },
       },
-      {
-        id: 'openDevTools',
-        label: t('menus.openDevTools'),
-        enabled: typeof currentView === 'object' && !!currentView.url,
-        accelerator:
-          process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
-        click: () => {
-          const guestWebContents =
-            typeof currentView === 'object'
-              ? getWebContentsByServerUrl(currentView.url)
-              : null;
-          guestWebContents?.toggleDevTools();
-        },
-      },
-      {
-        id: 'openDevToolsOnAllWindows',
-        label: t('menus.openDevToolsOnAllWindows'),
-        enabled: typeof currentView === 'object' && !!currentView.url,
-        accelerator:
-          process.platform === 'darwin' ? 'Command+Alt+G' : 'Ctrl+Shift+G',
-        click: () => {
-          const windows = BrowserWindow.getAllWindows();
-          windows.forEach((window) => {
-            window.webContents.toggleDevTools();
-          });
-        },
-      },
+      // {
+      //   id: 'openDevTools',
+      //   label: t('menus.openDevTools'),
+      //   enabled: typeof currentView === 'object' && !!currentView.url,
+      //   accelerator:
+      //     process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
+      //   click: () => {
+      //     const guestWebContents =
+      //       typeof currentView === 'object'
+      //         ? getWebContentsByServerUrl(currentView.url)
+      //         : null;
+      //     guestWebContents?.toggleDevTools();
+      //   },
+      // },
+      // {
+      //   id: 'openDevToolsOnAllWindows',
+      //   label: t('menus.openDevToolsOnAllWindows'),
+      //   enabled: typeof currentView === 'object' && !!currentView.url,
+      //   accelerator:
+      //     process.platform === 'darwin' ? 'Command+Alt+G' : 'Ctrl+Shift+G',
+      //   click: () => {
+      //     const windows = BrowserWindow.getAllWindows();
+      //     windows.forEach((window) => {
+      //       window.webContents.toggleDevTools();
+      //     });
+      //   },
+      // },
       { type: 'separator' },
       {
         id: 'back',
@@ -602,23 +602,23 @@ const createHelpMenu = createSelector(
     label: t('menus.helpMenu'),
     role: 'help',
     submenu: [
-      {
-        id: 'documentation',
-        label: t('menus.documentation'),
-        click: () => {
-          shell.openExternal('https://docs.rocket.chat/');
-        },
-      },
-      {
-        id: 'reportIssue',
-        label: t('menus.reportIssue'),
-        click: () => {
-          shell.openExternal(
-            'https://github.com/RocketChat/Rocket.Chat/issues/new'
-          );
-        },
-      },
-      { type: 'separator' },
+      // {
+      //   id: 'documentation',
+      //   label: t('menus.documentation'),
+      //   click: () => {
+      //     shell.openExternal('https://docs.rocket.chat/');
+      //   },
+      // },
+      // {
+      //   id: 'reportIssue',
+      //   label: t('menus.reportIssue'),
+      //   click: () => {
+      //     shell.openExternal(
+      //       'https://github.com/RocketChat/AIDA.Connect/issues/new'
+      //     );
+      //   },
+      // },
+      // { type: 'separator' },
       {
         id: 'reload-window',
         label: t('menus.reload'),
@@ -633,21 +633,21 @@ const createHelpMenu = createSelector(
           browserWindow.webContents.reload();
         },
       },
-      {
-        id: 'toggleDevTools',
-        label: t('menus.toggleDevTools'),
-        accelerator: 'CommandOrControl+Shift+D',
-        click: async () => {
-          const browserWindow = await getRootWindow();
+      // {
+      //   id: 'toggleDevTools',
+      //   label: t('menus.toggleDevTools'),
+      //   accelerator: 'CommandOrControl+Shift+D',
+      //   click: async () => {
+      //     const browserWindow = await getRootWindow();
 
-          if (!browserWindow.isVisible()) {
-            browserWindow.showInactive();
-          }
-          browserWindow.focus();
-          browserWindow.webContents.toggleDevTools();
-        },
-      },
-      { type: 'separator' },
+      //     if (!browserWindow.isVisible()) {
+      //       browserWindow.showInactive();
+      //     }
+      //     browserWindow.focus();
+      //     browserWindow.webContents.toggleDevTools();
+      //   },
+      // },
+      // { type: 'separator' },
       {
         id: 'clearTrustedCertificates',
         label: t('menus.clearTrustedCertificates'),
@@ -674,14 +674,14 @@ const createHelpMenu = createSelector(
           },
         },
       ]),
-      { type: 'separator' },
-      {
-        id: 'learnMore',
-        label: t('menus.learnMore'),
-        click: () => {
-          shell.openExternal('https://rocket.chat');
-        },
-      },
+      // { type: 'separator' },
+      // {
+      //   id: 'learnMore',
+      //   label: t('menus.learnMore'),
+      //   click: () => {
+      //     shell.openExternal('https://rocket.chat');
+      //   },
+      // },
       ...on(process.platform !== 'darwin', () => [
         {
           id: 'about',

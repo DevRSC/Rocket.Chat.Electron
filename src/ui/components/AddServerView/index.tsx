@@ -182,7 +182,7 @@ export const AddServerView: FC = () => {
                   id={inputId}
                   error={errorMessage ?? undefined}
                   type='text'
-                  placeholder={defaultServerUrl.href}
+                  placeholder='https://your-server-url.com'
                   dir='auto'
                   value={input}
                   onChange={handleInputChange}

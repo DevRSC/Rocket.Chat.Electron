@@ -3,25 +3,25 @@
   "workspaces": [
     "workspaces/*"
   ],
-  "productName": "Rocket.Chat",
-  "name": "rocketchat",
-  "description": "Official OSX, Windows, and Linux Desktop Clients for Rocket.Chat",
+  "productName": "AIDA.Connect",
+  "name": "aidaconnect",
+  "description": "Official OSX, Windows, and Linux Desktop Clients for AIDA.Connect",
   "version": "3.9.0",
-  "author": "Rocket.Chat Support <support@rocket.chat>",
-  "copyright": "© 2016-2021, Rocket.Chat",
+  "author": "AIDA.Connect Support <support@rocket.chat>",
+  "copyright": "© 2016-2021, AIDA.Connect",
   "homepage": "https://rocket.chat",
   "license": "MIT",
   "keywords": [
-    "rocketchat",
+    "aidaconnect",
     "desktop",
     "electron"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RocketChat/Rocket.Chat.Electron.git"
+    "url": "git+https://github.com/RocketChat/AIDA.Connect.Electron.git"
   },
   "bugs": {
-    "url": "https://github.com/RocketChat/Rocket.Chat.Electron/issues"
+    "url": "https://github.com/RocketChat/AIDA.Connect.Electron/issues"
   },
   "main": "app/main.js",
   "scripts": {

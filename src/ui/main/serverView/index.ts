@@ -381,13 +381,13 @@ export const attachGuestWebContentsEvents = async (): Promise<void> => {
         },
       },
       { type: 'separator' },
-      {
-        label: t('sidebar.item.openDevTools'),
-        click: () => {
-          const guestWebContents = getWebContentsByServerUrl(serverUrl);
-          guestWebContents?.openDevTools();
-        },
-      },
+      // {
+      //   label: t('sidebar.item.openDevTools'),
+      //   click: () => {
+      //     const guestWebContents = getWebContentsByServerUrl(serverUrl);
+      //     guestWebContents?.openDevTools();
+      //   },
+      // },
       {
         label: t('sidebar.item.clearCache'),
         click: async () => {
